@@ -3,11 +3,11 @@
  * @Author: zhongshuai
  * @Date: 2019-05-26 17:36:36
  * @LastEditors: zhongshuai
- * @LastEditTime: 2019-05-26 17:43:23
+ * @LastEditTime: 2019-05-26 17:44:08
  -->
 # mysql-easy-sql
 
-##example
+## example
 
 ###set database info
     const informationSchema = app.mysql.createInstance(mysql.informationSchema);
