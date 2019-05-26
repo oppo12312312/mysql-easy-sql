@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @Date: 2019-05-26 17:36:36
  * @LastEditors: zhongshuai
- * @LastEditTime: 2019-05-26 17:47:34
+ * @LastEditTime: 2019-05-26 17:48:17
  -->
 # mysql-easy-sql
 
@@ -17,7 +17,7 @@
     dbInfo.setDbInfoConfig({ table, column });
     mysqlEasySql.setDbInfoConfig({ table, column });`
 
-###query
+### query
     `const example = {
     // 必须传入字段
     tableName: 'teTest',
