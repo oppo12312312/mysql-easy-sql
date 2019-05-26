@@ -3,22 +3,22 @@
  * @Author: zhongshuai
  * @Date: 2019-05-26 17:36:36
  * @LastEditors: zhongshuai
- * @LastEditTime: 2019-05-26 17:48:17
+ * @LastEditTime: 2019-05-26 17:53:41
  -->
 # mysql-easy-sql
 
 ## example
 
 ### set database info
-    `const informationSchema = app.mysql.createInstance(mysql.informationSchema);
+    const informationSchema = app.mysql.createInstance(mysql.informationSchema);
     const database = mysql.client.database;
     const table = await informationSchema.query(` SELECT a.* FROM TABLES a where a.TABLE_SCHEMA = '${database}'`);
     const column = await informationSchema.query(` SELECT a.* FROM COLUMNS a  WHERE a.TABLE_NAME in (SELECT a.TABLE_NAME   FROM TABLES a where a.TABLE_SCHEMA = '${database}')`);
     dbInfo.setDbInfoConfig({ table, column });
-    mysqlEasySql.setDbInfoConfig({ table, column });`
+    mysqlEasySql.setDbInfoConfig({ table, column });
 
 ### query
-    `const example = {
+    const example = {
     // 必须传入字段
     tableName: 'teTest',
     // where 可以不传
@@ -51,6 +51,36 @@
     pageNum: 1,
     pageSize: 10,
     };
-    mysqlEasySql.getSelectSqlByParam(example);`
+    mysqlEasySql.getSelectSqlByParam(example);
+
+### update 
+    const example = {
+        // 必须传入字段
+        tableName: 'teTest',
+        where: {
+          id: '1'
+        },
+        //必传
+        data: { text: '54444' }
+    };
+    mysqlEasySql.getUpdateSqlByParam(example);
+
+### inset   
+    const example = {
+        // 必须传入字段
+        tableName: 'teTest',
+        data: { text: '54444', enum: 3, dateTime: 1298388790 }
+      };
+    mysqlEasySql.getInsetSqlByParam(example);
+
+### delete
+    const example = {
+        // 必须传入字段
+        tableName: 'teTest',
+        id: '85afc8b5-7e08-11e9-af95-0'
+    };
+    mysqlEasySql.getDeleteSqlByParam(example);
+
+
 
 
