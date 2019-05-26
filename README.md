@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @Date: 2019-05-26 17:36:36
  * @LastEditors: zhongshuai
- * @LastEditTime: 2019-05-26 17:55:05
+ * @LastEditTime: 2019-05-26 18:02:08
  -->
 # mysql-easy-sql
 
@@ -15,7 +15,6 @@
     const database = mysql.client.database;
     const table = await informationSchema.query(` SELECT a.* FROM TABLES a where a.TABLE_SCHEMA = '${database}'`);
     const column = await informationSchema.query(` SELECT a.* FROM COLUMNS a  WHERE a.TABLE_NAME in (SELECT a.TABLE_NAME   FROM TABLES a where a.TABLE_SCHEMA = '${database}')`);
-    dbInfo.setDbInfoConfig({ table, column });
     mysqlEasySql.setDbInfoConfig({ table, column });
 
 ### query
@@ -28,18 +27,18 @@
     where: {
         // 时间格式请转化成unix时间戳，不支持其他格式
         dateTime: {
-        '>': 153073468,
-        '<=': 15709074831,
-        between: [ 153073468, 15709074831 ], // between 和 not between 后面必须是一个length=2的数组， 否则会报错
-        'not between': [ 15307346, 1570907483 ],
+            '>': 153073468,
+            '<=': 15709074831,
+            between: [ 153073468, 15709074831 ], // between 和 not between 后面必须是一个length=2的数组， 否则会报错
+            'not between': [ 15307346, 1570907483 ],
         },
         // in 有两种模式, 下面的是简写，也可以这样： enum: {in :[1, 11]},
         enum: [ 1, 11 ],
         text: {
-        like: '%11%', // 注意like 中的 %、_ 等通配符需要拼接到value中
-        '=': '1121',
-        is: 'not null', // is 的值只能是 not null 和  null
-        in: [ '1121' ],
+            like: '%11%', // 注意like 中的 %、_ 等通配符需要拼接到value中
+            '=': '1121',
+            is: 'not null', // is 的值只能是 not null 和  null
+            in: [ '1121' ],
         },
         // = 也有两种模式，下面的是简写，也可以这样：id: {"=" , 1}
         id: 1,
