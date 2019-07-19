@@ -1,8 +1,9 @@
 {
   "name": "mysql-easy-sql",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "see https://github.com/oppo12312312/mysql-easy-sql",
   "main": "index.js",
+  "gir repository": "https://github.com/oppo12312312/mysql-easy-sql",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

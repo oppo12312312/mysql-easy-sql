@@ -3,9 +3,10 @@
  * @Author: zhongshuai
  * @Date: 2019-05-26 17:36:36
  * @LastEditors: zhongshuai
- * @LastEditTime: 2019-05-26 18:07:31
+ * @LastEditTime: 2019-07-19 17:05:59
  -->
 # mysql-easy-sql
+# Json to SQL is much easier
 
 ## example
     const mysqlEasySql = require('mysql-easy-sql');
@@ -56,6 +57,17 @@
         pageSize: 10,
       };
     mysqlEasySql.getSelectSqlByParam(example);
+    return 
+    SELECT a.`enum` AS enum, a.`text` AS text, unix_timestamp(a.`date_Time`) AS dateTime
+    FROM `Te_test` a
+    WHERE (a.`date_Time` >= from_unixtime(1298388790)
+      AND a.`date_Time` <= from_unixtime(1614007990)
+      AND a.`date_Time` BETWEEN from_unixtime(1298388790) AND from_unixtime(1614007990)
+      AND a.`date_Time` NOT BETWEEN from_unixtime(45) AND from_unixtime(23)
+      AND a.`enum` IN (1, 11)
+      AND a.`id` = '1')
+    ORDER BY a.`id` DESC
+    LIMIT 0, 10
 
 ### update 
     const example = {
@@ -69,13 +81,20 @@
     };
     mysqlEasySql.getUpdateSqlByParam(example);
 
+    return update `Te_test` a set a.`text` = '54444'  where a.`id` = '1' 
+
 ### inset   
     const example = {
-        // 必须传入字段
-        tableName: 'teTest',
-        data: { text: '54444', enum: 3, dateTime: 1298388790 }
-      };
+      // 必须传入字段
+      tableName: 'teTest',
+      data: { 
+        id: '111', text: '54444', enum: 3, dateTime: 1298388790 
+      }
+    };
     mysqlEasySql.getInsetSqlByParam(example);
+
+    return 
+    insert into `Te_test` ( `id` ,`text` ,`enum` ,`date_Time` ) values ( '111','54444',3,from_unixtime(1298388790) )
 
 ### delete
     const example = {
@@ -84,6 +103,9 @@
         id: '85afc8b5-7e08-11e9-af95-0'
     };
     mysqlEasySql.getDeleteSqlByParam(example);
+
+    return 
+    delete from  `Te_test` where `id` = '85afc8b5-7e08-11e9-af95-0'
 
 
 
