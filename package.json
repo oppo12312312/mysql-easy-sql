@@ -1,13 +1,32 @@
 {
-  "name": "mysql-easy-sql",
+  "name": "json2sql-mysql",
   "version": "1.0.2",
-  "description": "see https://github.com/oppo12312312/mysql-easy-sql",
+  "description": "zhongshuai",
   "main": "index.js",
-  "gir repository": "https://github.com/oppo12312312/mysql-easy-sql",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["mysql", "Construct the SQL with json"],
-  "author": "zhongshuai",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oppo12312312/mysql-easy-sql.git"
+  },
+  "keywords": [
+    "dataBase",
+    "mysql",
+    "jsonToSql",
+    "SingleTable",
+    "formatter",
+    "convert",
+    "nodejs",
+    "easy"
+  ],
+  "author": "Mysql single table addition and deletion through json implementation Modify the",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oppo12312312/mysql-easy-sql/issues"
+  },
+  "homepage": "https://github.com/oppo12312312/mysql-easy-sql#readme"
 }

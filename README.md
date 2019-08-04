@@ -3,13 +3,16 @@
  * @Author: zhongshuai
  * @Date: 2019-05-26 17:36:36
  * @LastEditors: zhongshuai
- * @LastEditTime: 2019-07-19 17:05:59
+ * @LastEditTime: 2019-08-04 14:49:31
  -->
-# mysql-easy-sql
 # Json to SQL is much easier
 
+
+## git
+   https://github.com/oppo12312312/mysql-easy-sql.git
+
 ## example
-    const mysqlEasySql = require('mysql-easy-sql');
+    const mysqlEasySql = require('json2sql-mysql');
 
 ### set database info
     const informationSchema = app.mysql.createInstance(mysql.informationSchema);
